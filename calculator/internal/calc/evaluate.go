@@ -3,6 +3,10 @@ package calc
 import "errors"
 
 func Evaluate(nums []float64, op string) (float64, error) {
+	if len(nums) != 2 {
+        return 0, errors.New("must provide exactly 2 numbers")
+    }
+	
 	a, b := nums[0], nums[1]
 
 	switch op {

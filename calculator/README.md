@@ -1,65 +1,116 @@
-# GoLang Calculator Project  
+# 🧮 Calculator CLI (Go)
 
-Welcome to my first Go project! This is a simple calculator application that I built while learning the Go programming language. The goal of this project is to practice Go fundamentals and create a functional command-line tool.  
+This is my **first project in Go**, created to practice the basics of the language and get comfortable with Go’s project structure, error handling, and testing.  
 
-## Features  
+It’s a simple command-line calculator that supports **addition, subtraction, multiplication, and division**.
 
-- Perform basic arithmetic operations: addition, subtraction, multiplication, and division.  
-- Command-line interface for input and output.  
-- Lightweight and easy to use.  
+---
 
-## How It Works  
+## 📂 Project Structure
 
-1. Run the program from the command line.  
-2. Input your calculation in the format:  
-    ```bash  
-    calc 2 + 3  
-    ```  
-3. The program will output the result:  
-    ```bash  
-    Output: 5  
-    ```  
+```
+calculator/
+├── cmd/
+│   └── calculator/
+│       └── main.go        # Entry point for the CLI
+├── internal/
+│   └── calc/              # Core calculator logic
+│       ├── evaluate.go    # Evaluates expressions
+│       ├── parse.go       # Parses CLI arguments into numbers and operator
+│       ├── errors.go      # Usage & error messages
+│       └── calc_test.go   # Unit tests for the calculator
+├── go.mod                 # Go module definition
+└── README.md              # Documentation (this file)
+```
 
-## Folder Structure  
+- **`cmd/calculator/`** → where the `main.go` lives (the actual program you run).  
+- **`internal/calc/`** → private logic for parsing and evaluating expressions.  
+- **`calc_test.go`** → unit tests to ensure correctness.  
 
-```plaintext  
-GoLang/  
-├── calculator/  
-│   ├── add.go  
-│   ├── subtract.go  
-│   ├── multiply.go  
-│   ├── divide.go  
-├── cmd/  
-│   ├── main.go  
-├── README.md  
-```  
+---
 
-- **calculator/**: Contains the logic for arithmetic operations.  
-- **cmd/**: Contains the entry point of the application.  
+## 🚀 Getting Started
 
-## Getting Started  
+### 1. Clone the repository
 
-1. Clone the repository:  
-    ```bash  
-    git clone https://github.com/yourusername/GoLang.git  
-    ```  
-2. Navigate to the project directory:  
-    ```bash  
-    cd GoLang  
-    ```  
-3. Run the program:  
-    ```bash  
-    go run cmd/main.go  
-    ```  
+```bash
+git clone https://github.com/turman17/GoLang-progress.git
+cd GoLang-progress/calculator
+```
 
-## Future Improvements  
+### 2. Run the calculator
 
-- Add support for more complex operations (e.g., exponentiation, square root).  
-- Implement error handling for invalid inputs.  
-- Add unit tests for all operations.  
+```bash
+go run ./cmd/calculator <number> <operator> <number>
+```
 
-## License  
+#### Example:
 
-This project is open-source and available under the [MIT License](LICENSE).  
+```bash
+go run ./cmd/calculator 3 + 5
+```
 
-Happy coding!  
+✅ Output:
+```
+Result: 8.000
+```
+
+---
+
+## ➕ Supported Operators
+
+| Operator | Action        |
+|----------|---------------|
+| `+`      | Addition      |
+| `-`      | Subtraction   |
+| `*`      | Multiplication|
+| `/`      | Division (with zero-check) |
+
+---
+
+## 🧪 Running Tests
+
+Unit tests are included for the calculator logic.
+
+Run all tests:
+
+```bash
+go test ./...
+```
+
+Verbose mode:
+
+```bash
+go test -v ./internal/calc
+```
+
+With coverage:
+
+```bash
+go test -cover ./internal/calc
+```
+
+---
+
+## 🎯 What I Learned
+
+- How to structure a Go project (`cmd/`, `internal/`)  
+- Parsing CLI arguments with `os.Args`  
+- Converting strings to numbers with `strconv`  
+- Error handling and user-friendly messages  
+- Writing unit tests using Go’s `testing` package  
+
+---
+
+## 📌 Next Steps
+
+- Add more math operators (modulo `%`, power `^`)  
+- Better input validation and error output  
+- Explore integration with external packages  
+- Add CI (GitHub Actions) to run tests automatically  
+
+---
+
+✍️ **Author:** [@turman17](https://github.com/turman17)  
+📅 **Started:** October 2025  
+🔰 **Note:** This is my first Go project and part of my learning journey.  
