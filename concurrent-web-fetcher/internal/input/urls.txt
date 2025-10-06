@@ -1,0 +1,11 @@
+https://golang.org
+https://example.com
+https://httpbin.org/get
+https://jsonplaceholder.typicode.com/posts/1
+https://www.wikipedia.org
+https://www.google.com
+https://www.bbc.com
+https://www.reddit.com
+https://httpstat.us/200?sleep=2000
+fwefewfewf
+https://thissitedoesnotexist.tld
