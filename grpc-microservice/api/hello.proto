@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package hello.v1;
+
+option go_package = "github.com/turman17/grpc-microservice/api/gen;gen";
+
+service Greeter{
+    rpc SayHello(HelloRequest) returns (HelloReply){}
+    rpc GetTime(TimeRequest) returns (TimeReply){}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply{
+    string message = 1;
+}
+
+message TimeRequest {}
+
+message TimeReply {
+    string iso8601 = 1; // e.g., 2025-10-14T12:34:56Z
+}
